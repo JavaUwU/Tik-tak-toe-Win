@@ -30,7 +30,19 @@
 .align-center{
     align-items:center;
 }
-
+/******************************************
+/* Positions
+/*******************************************/
+.absolute{
+    position:absolute;
+}
+.relative{
+    position:relative;
+}
+.a-mid{
+    left:28%;
+    top:30%;
+}
 /******************************************
 /* Special Styles
 /*******************************************/
@@ -39,10 +51,64 @@
     height:200px;
     border: 1px solid black;
 }
+.screen{
+    width:600px;
+    height:600px;
+    display:block;
+    margin:0 auto;
+    background-color: black;
+}
+.title{
+    color:white;
+    margin: 0;
+    text-align:center;
+}
+.title-big{
+    color:white;
+    font-size:60px;
 
+    margin-bottom:30px;
+    text-align:center;
+}
+.title-small{
+    color:white;
+    margin: 0;
+    text-align:center;
+}
+.text-field{
+    margin: 2px 0 10px 0;
+    border-radius: 7px;
+    border:1px solid black;
+    background:rgb(183, 183, 183);
+    appearance: none;
+}
+.text-field:focus{
+    border:1px solid rgb(0, 255, 183);
+    outline:none;
+
+}
+.button {
+    margin:0 5px;
+    width:90px;
+    height:30px;
+    border-radius:7px;
+}
+.button:hover {
+    background-color:rgb(199, 199, 199)
+}
+.button:active{
+    background-color:white;
+}
 /******************************************
 /* Class Function
 /*******************************************/
 .noClick {
     pointer-events: none;
+}
+
+.none{
+    display:none;
+}
+.block {
+    display:block;
 }

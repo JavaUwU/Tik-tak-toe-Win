@@ -1,8 +1,8 @@
-import { setup } from './setup.js'
+import { setupTitleScreen } from './setup.js'
 
 
 function app (){
-    setup()
+    setupTitleScreen()
 }
 
 
