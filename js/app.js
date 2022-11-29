@@ -13,6 +13,7 @@ boxes.forEach(box => {
   box.addEventListener('click', function handleClick(event) {
     // See visually when box is clicked
     box.setAttribute('style', 'background-color: yellow;');
+    box.classList.add('noClick')
     // on-click -> add data-value to player array
     player.splice(0,0,event.target.getAttribute('data-value'))
     // checks if first player meets first wincondition
@@ -21,7 +22,7 @@ boxes.forEach(box => {
             return player.includes(element);
           })
           if(containsAll){
-            console.log('you win')
+            alert('you win')
           }
       });
     });
