@@ -1,3 +1,5 @@
+// Backend stuff
+
 let player = [];
 let computer = [];
 let winCondition = [
@@ -9,11 +11,14 @@ let winCondition = [
 console.log(winCondition) 
 console.log(player)
 export function handleClick(event) {
+
     // See visually when box is clicked
-    event.setAttribute('style', 'background-color: yellow;');
-    box.classList.add('noClick')
+    event.target.setAttribute('style', 'background-color: yellow;');
+    event.target.classList.add('noClick')
+
     // on-click -> add data-value to player array
     player.splice(0,0,event.target.getAttribute('data-value'))
+
     // checks if first player meets first wincondition
     winCondition.forEach(condition => {
         let playerArr = condition.every(element => {
