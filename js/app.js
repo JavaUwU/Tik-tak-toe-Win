@@ -16,14 +16,16 @@ boxes.forEach(box => {
     // on-click -> add data-value to player array
     player.splice(0,0,event.target.getAttribute('data-value'))
     // checks if first player meets first wincondition
-    let containsAll = winCondition[0].every(element => {
-        return player.includes(element);
-      })
-      if(containsAll){
-        console.log('you win')
-      }
+    winCondition.forEach(condition => {
+        let containsAll = condition.every(element => {
+            return player.includes(element);
+          })
+          if(containsAll){
+            console.log('you win')
+          }
+      });
+    });
   });
-});
 
 
 
