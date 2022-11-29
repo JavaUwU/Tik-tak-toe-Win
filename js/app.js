@@ -18,12 +18,17 @@ boxes.forEach(box => {
     player.splice(0,0,event.target.getAttribute('data-value'))
     // checks if first player meets first wincondition
     winCondition.forEach(condition => {
-        let containsAll = condition.every(element => {
+        let playerArr = condition.every(element => {
             return player.includes(element);
-          })
-          if(containsAll){
-            alert('you win')
-          }
+        })
+        let computerArr = condition.every(element => {
+            return computer.includes(element)
+        })
+        if(playerArr){
+            alert('Player wins')
+        } else if(computerArr){
+            alert('computer wins')
+        }
       });
     });
   });
