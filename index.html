@@ -10,7 +10,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <section class='flex col align-center'>
+    <section id='titleScreen' class='screen relative'>
+        <div class='absolute a-mid'>
+            <h2 class='title-big'>Tic-tac-toe</h2>
+            <h3 class='title-small'>Enter your name</h2>
+            <div class='flex just-center'>
+                <input id='playerName' type='text' class='text-field'>
+            </div>
+            <div class='flex just-center'>
+                <button id='startButton' class='button'>Start</button>
+                <button id='settingsButton' class='button'>Settings</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section id='playScreen' class='flex col align-center none'>
         <div class='flex row'>
             <div id='box1' class='box' data-value="1">
             </div>
@@ -36,6 +51,9 @@
             </div>
         </div>
     </section>
-    <script src="./js/app.js"></script>
+
+    <script type='module' src="./js/setup.js"></script>
+    <script type='module' src="./js/logic.js"></script>
+    <script type='module' src="./js/app.js"></script>
 </body>
 </html>
