@@ -24,7 +24,6 @@ export class SettingsState{
     this.handleSfxControl()
     this.handleMusicControl()
     this.handleBackgroundControl()
-    this.handleBlindControl()
     this.stateMachine.switchState(new TitleState(this.stateMachine));
   }
   handleCancelSettingsButton(){
@@ -52,8 +51,8 @@ export class SettingsState{
   // handles background color of the settingsScreen and the titleScreen
   // TODO make background change while you fidget with the color palette
   handleBackgroundControl(){
+
     let color = document.querySelector('#backgroundControl').value
-    console.log(color)
     document.querySelector('#settingsScreen').style.backgroundColor = color
     document.querySelector('#titleScreen').style.backgroundColor = color
   }
