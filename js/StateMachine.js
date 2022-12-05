@@ -1,4 +1,5 @@
 import { TitleState } from './GameStates/TitleState.js'
+import { SFX } from './sfx.js'
 // TODO 
 // this gamestate file should handle information sent beetween states. saving game etc
 
@@ -7,6 +8,7 @@ import { TitleState } from './GameStates/TitleState.js'
 export class StateMachine{
   constructor(){
     this.currentState = new TitleState(this) // State machine needs to initilize on a state
+    this.sfx = new SFX() // Sound Effects Manager
   }
 
   // SwitchState handles the switching of states.. duh 

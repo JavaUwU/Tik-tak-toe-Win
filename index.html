@@ -52,14 +52,19 @@
     <section id='titleScreen' class='screen relative bg-black'>
         <div class='absolute a-mid'>
             <h2 class='title-big'>Tic-tac-toe</h2>
-            <h3 class='title-small'>Enter your name</h2>
-            <div class='flex just-center'>
-                <input id='playerName' type='text' class='text-field'>
-            </div>
-            <div class='flex just-center'>
-                <button id='startButton' class='button'>Start</button>
-                <button id='settingsButton' class='button'>Settings</button>
-            </div>
+            <div id='startGameScreen' class='none'>
+                <h3 class='title-small'>Enter your name</h2>
+                <div class='flex just-center'>
+                    <input id='playerName' type='text' class='text-field'>
+                </div>
+                <div class='flex just-center'>
+                    <button id='startButton' class='button'>Start</button>
+                    <button id='settingsButton' class='button'>Settings</button>
+                </div>
+             </div>
+             <div id='playGameScreen' class='flex just-center'>
+                <button id='playMusicButton' class='button'>Play</button>
+             </div>
         </div>
     </section>
     <!-- Title Screen End  -->
@@ -73,7 +78,7 @@
         <!-- Music Volume Control -->
         <div class='flex row just-center setting-list'>
             <h3 class='title'>Music Volume</h3>
-            <input id='musicControl' type='range' min='0' max='100' value='50' class='slider'>
+            <input id='musicControl' type='range' min='0' max='100' value='70' class='slider'>
         </div>
 
         <!-- SFX Volume Control -->
@@ -127,6 +132,7 @@
     <script type='module' src="./js/GameStates/PlayState.js"></script>
     <script type='module' src="./js/GameStates/SettingsState.js"></script>
     <script type='module' src="./js/GameStates/TitleState.js"></script>
+    <script type='module' src="./js/sfx.js"></script>
     <script type='module' src="./js/StateMachine.js"></script>
     <script type='module' src="./js/logic.js"></script>
     <script type='module' src="./js/app.js"></script>

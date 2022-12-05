@@ -13,6 +13,7 @@ export class TitleState{
   setup(){
     document.querySelector('#startButton').addEventListener('click', this.handleStartButton.bind(this)) // .BIND(THIS)!!!!
     document.querySelector('#settingsButton').addEventListener('click', this.handleSettingsButton.bind(this))
+    document.querySelector('#playMusicButton').addEventListener('click', this.handlePlayGameButton.bind(this))
   }
   // Rendering the screen. just removing the .none class
   render(){
@@ -21,7 +22,7 @@ export class TitleState{
 
   // When clicking the startbutton it does something and then switches the state
   handleStartButton(){
-
+    this.stateMachine.sfx.select.play()
     let playerName = document.querySelector('#playerName').value // TODO make a player class and set this as its name
     // checking for empty name
     if(playerName === ''){
@@ -41,9 +42,18 @@ export class TitleState{
 
   // When clicking on the Settings button
   handleSettingsButton(){
+    this.stateMachine.sfx.select.play()
     this.stateMachine.switchState(new SettingsState(this.stateMachine)); // IMPORTANT!!!! every State needs the StateMachine!!! IMPORTANT!!!!
   };
-}
+  handlePlayGameButton(){
+    document.querySelector('#playGameScreen').classList.add('none')
+    document.querySelector('#startGameScreen').classList.remove('none')
+    this.stateMachine.sfx.playMusic()
+  }
+    
+
+  }
+
 
 
 

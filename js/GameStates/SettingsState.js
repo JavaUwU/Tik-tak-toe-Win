@@ -7,9 +7,8 @@ export class SettingsState{
   }
   setup(){
     // TODO
-    document.querySelector('#musicControl').addEventListener('click', this.handleMusicControl)
-    document.querySelector('#sfxControl').addEventListener('click', this.handleSfxControl)
-    document.querySelector('#backgroundControl').addEventListener('click', this.handleBackgroundControl)
+  
+    
     document.querySelector('#resolutionControl').addEventListener('click', this.handleResolutionControl)
     document.querySelector('#colorBlindControl').addEventListener('click', this.handleColorBlindControl)
     document.querySelector('#blindControl').addEventListener('click', this.handleBlindControl)
@@ -21,35 +20,51 @@ export class SettingsState{
     document.querySelector('#settingsScreen').classList.remove('none')
   }
   handleAcceptSettingsButton(){
-    // TODO
-    return
-  }
-  handleCancelSettingsButton(){
+    
+    this.handleSfxControl()
+    this.handleMusicControl()
+    this.handleBackgroundControl()
+    this.handleBlindControl()
     this.stateMachine.switchState(new TitleState(this.stateMachine));
   }
+  handleCancelSettingsButton(){
+    this.stateMachine.sfx.select.play()
+    this.stateMachine.switchState(new TitleState(this.stateMachine));
+  }
+  //Handles blind mode
   handleBlindControl(){
-    // TODO
-    return
+    
+    if(document.querySelector('#blindControl').value === 'on'){
+      console.log('blind')
+      document.querySelector('body').style.backgroundColor = '#000000'
+      document.querySelector('#settingsScreen').classList.add('none')
+    }
+    
   }
   handleColorBlindControl(){
-    // TODO
+    
     return
   }
   handleResolutionControl(){
     // TODO
     return
   }
+  // handles background color of the settingsScreen and the titleScreen
+  // TODO make background change while you fidget with the color palette
   handleBackgroundControl(){
-    // TODO
-    return
+    let color = document.querySelector('#backgroundControl').value
+    console.log(color)
+    document.querySelector('#settingsScreen').style.backgroundColor = color
+    document.querySelector('#titleScreen').style.backgroundColor = color
   }
+  // handles the volume of the sound effects
+  // TODO Make volume change while you fidget with the slider
   handleSfxControl(){
-    // TODO
-    return
+    this.stateMachine.sfx.select.volume = Number(document.querySelector('#sfxControl').value) / 100
   }
+  // Handles the volume bar and sets the SFX music volume
   handleMusicControl(){
-    // TODO
-    return
+    this.stateMachine.sfx.music.volume = Number(document.querySelector('#musicControl').value) / 100
   }
 
 }
