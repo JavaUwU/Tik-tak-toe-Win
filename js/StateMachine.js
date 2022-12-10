@@ -15,6 +15,7 @@ export class StateMachine{
   // it takes an argument that sets the new state
   // then it renders the new State and sets up the event listeners and etc
   switchState(state){
+    this.currentState = null
     this.currentState = state;
 
     this.resetScreens() // Needs to reset the screens
@@ -32,6 +33,7 @@ export class StateMachine{
       document.querySelector('#settingsScreen').classList.add('none')
       document.querySelector('#titleScreen').classList.add('none')
       document.querySelector('#playScreen').classList.add('none')
+      document.querySelector('#gameOverScreen').classList.add('none')
   }
 }
 
