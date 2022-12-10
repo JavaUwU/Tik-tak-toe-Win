@@ -9,9 +9,9 @@ export class SettingsState{
     // TODO
   
     
-    document.querySelector('#resolutionControl').addEventListener('click', this.handleResolutionControl)
-    document.querySelector('#colorBlindControl').addEventListener('click', this.handleColorBlindControl)
-    document.querySelector('#blindControl').addEventListener('click', this.handleBlindControl)
+    // document.querySelector('#resolutionControl').addEventListener('click', this.handleResolutionControl)
+    // document.querySelector('#colorBlindControl').addEventListener('click', this.handleColorBlindControl)
+    // document.querySelector('#blindControl').addEventListener('click', this.handleBlindControl)
 
     document.querySelector('#acceptSettingsButton').addEventListener('click', this.handleAcceptSettingsButton.bind(this))
     document.querySelector('#cancelSettingsButton').addEventListener('click', this.handleCancelSettingsButton.bind(this))
@@ -20,7 +20,7 @@ export class SettingsState{
     document.querySelector('#settingsScreen').classList.remove('none')
   }
   handleAcceptSettingsButton(){
-    
+    this.handleColorblindMode()
     this.handleSfxControl()
     this.handleMusicControl()
     this.handleBackgroundControl()
@@ -64,6 +64,9 @@ export class SettingsState{
   // Handles the volume bar and sets the SFX music volume
   handleMusicControl(){
     this.stateMachine.sfx.music.volume = Number(document.querySelector('#musicControl').value) / 100
+  }
+  handleColorblindMode(){
+    document.querySelector('#target').style.color = '#454236'
   }
 
 }
