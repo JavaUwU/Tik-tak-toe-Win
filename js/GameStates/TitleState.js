@@ -29,7 +29,8 @@ export class TitleState{
 
       alert('Error: Name not found, Please enter your name')
 
-    }else if (playerName.toLowerCase().startsWith('sad')){
+    }else if (playerName.toLowerCase().startsWith('sad')){     //lol
+
 
       alert('01001000 01100001 01110000 01110000 01111001 00100000 01000010 01101001 01110010 01110100 01101000 01100100 01100001 01111001 00100000 01010011 01100001 01100100 01101001 01101011 01100001 00100001 00100001 00100001')
 
