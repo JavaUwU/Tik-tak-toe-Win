@@ -7,6 +7,7 @@
 /*******************************************/
 body{
     font-family: 'VT323', monospace;
+    background-image: url(/img/background.png);
 }
 /******************************************
 /* Flex Modules
@@ -51,8 +52,19 @@ body{
 .box{
     width:200px;
     height:200px;
-    border: 1px solid black;
+    border: 1px solid beige;
 }
+
+.box.x{  /* adding character on box */
+    background: url(/img/dog-2.png) no-repeat;
+    background-size: cover;
+
+}
+.box.y{  /* adding character on box */
+    background: url(/img/cat-2.png) no-repeat;
+    background-size: cover;
+
+}      
 .screen{
     width:600px;
     height:600px;
@@ -75,6 +87,7 @@ body{
     margin: 0;
     text-align:center;
 }
+
 .text-field{
     margin: 2px 0 10px 0;
     border-radius: 7px;
@@ -119,6 +132,13 @@ body{
     margin:30px 0;
     width:90%;
     border-top:2px solid white;
+}
+
+.character > img{
+    cursor: pointer;
+}
+.character > img:hover{
+    background-color: beige;
 }
 /******************************************
 /* Color
