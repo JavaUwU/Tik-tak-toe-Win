@@ -11,14 +11,30 @@ let winCondition = [
 console.log(winCondition) 
 console.log(player)
 export function handleClick(event) {
-
     // See visually when box is clicked
-    event.target.setAttribute('style', 'background-color: yellow;');
-    event.target.classList.add('noClick')
+    checkEmpty(event)
 
     // on-click -> add data-value to player array
-    player.splice(0,0,event.target.getAttribute('data-value'))
+    
 
+    
+    
+
+}
+
+function computerTurn(){
+    let choice = Math.floor(Math.random() * 9 + 1 )
+
+    while(player.includes(String(choice)) || computer.includes(String(choice)) ){
+        choice = Math.floor(Math.random() * 9 + 1 )
+    }
+    computer.push(String(choice))
+    document.querySelector(`#box${choice}`).setAttribute('style', 'background-color: red;');
+    document.querySelector(`#box${choice}`).classList.add('noClick')
+
+}
+
+function winConditions(){
     // checks if first player meets first wincondition
     winCondition.forEach(condition => {
         let playerArr = condition.every(element => {
@@ -33,4 +49,18 @@ export function handleClick(event) {
             alert('computer wins')
         }
       });
+}
+
+function checkEmpty(event){
+    if(player.includes(event.target.getAttribute('data-value')) || computer.includes(event.target.getAttribute('data-value'))){
+        alert('Cant click on already clicked on box')
+        return
+    }else{
+        event.target.setAttribute('style', 'background-color: yellow;');
+        event.target.classList.add('noClick')
+        player.splice(0,0,event.target.getAttribute('data-value'))
+        winConditions()
+        setTimeout(computerTurn, 2000)
+        winConditions()
+    }
 }

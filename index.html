@@ -48,6 +48,19 @@
     </section>
     <!-- Play Screen End -->
 
+     <!-- Game over Screen Start -->
+     <section id='gameOverScreen' class='screen relative bg-black none'>
+        <div class='absolute a-mid'>
+            <h2 class='title-big'>Game Over</h2>
+            
+            <div class='flex just-center'>
+                <button id='goBackButton' class='button'>Go Back</button>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Game over Screen End  -->
+
     <!-- Title Screen Start -->
     <section id='titleScreen' class='screen relative bg-black'>
         <div class='absolute a-mid'>
@@ -80,7 +93,7 @@
     <section id='settingsScreen' class='screen flex col align-center bg-black none'>
 
         <!-- Title -->
-        <h2 class='title-big'>Settings</h2>
+        <h2 id='target' class='title-big'>Settings</h2>
 
         <!-- Music Volume Control -->
         <div class='flex row just-center setting-list'>
