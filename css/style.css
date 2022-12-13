@@ -55,7 +55,10 @@ body{
     border: 1px solid beige;
 }
 
-.box.x{  /* x--> dog y-->cat adding character on box */
+
+
+.box.x{  /* adding character on box */
+
     background: url(/img/dog-2.png) no-repeat;
     background-size: cover;
 
@@ -133,6 +136,7 @@ body{
     width:90%;
     border-top:2px solid white;
 }
+
 
 .character{
     cursor: pointer;
