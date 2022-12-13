@@ -55,7 +55,7 @@ body{
     border: 1px solid beige;
 }
 
-.box.x{  /* adding character on box */
+.box.x{  /* x--> dog y-->cat adding character on box */
     background: url(/img/dog-2.png) no-repeat;
     background-size: cover;
 
@@ -134,10 +134,10 @@ body{
     border-top:2px solid white;
 }
 
-.character > img{
+.character{
     cursor: pointer;
 }
-.character > img:hover{
+.character:hover{
     background-color: beige;
 }
 /******************************************
@@ -168,3 +168,10 @@ body{
 .block {
     display:block;
 }
+
+.selected{
+    background-color: aquamarine;
+    border: 2px solid beige;
+    border-radius: 15px;
+}
+
