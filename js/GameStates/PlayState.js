@@ -24,7 +24,7 @@ export class PlayState{
     const boxes = document.querySelectorAll('.box');
   
     boxes.forEach(box => {
-      box.addEventListener('click', this.handleClick.bind(this));
+      box.addEventListener('click', this.handleClick.bind(this), {once:true}); //{once:true}=> to be able o click only once
     });
   }
   render(){

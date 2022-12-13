@@ -48,6 +48,7 @@
     </section>
     <!-- Play Screen End -->
 
+
      <!-- Game over Screen Start -->
      <section id='gameOverScreen' class='screen relative bg-black none'>
         <div class='absolute a-mid'>
@@ -69,9 +70,10 @@
             <div id='startGameScreen' class='none'>
 
                 <h3 class="title-small">Select Character</h3>
-                <div class="character flex just-center">
-                    <img src="./img/dog-2.png" alt="dog" data-id="x">
-                    <img src="./img/cat-2.png" alt="cat" data-id="y">
+
+                <div class=" flex just-center">
+                    <img src="./img/dog-2.png" alt="dog" class="character" data-id="x">
+                    <img src="./img/cat-2.png" alt="cat" class="character" data-id="y">
                 </div>
                 <h3 class='title-small'>Enter your name</h2>
                 <div class='flex just-center'>
@@ -156,6 +158,9 @@
     <script type='module' src="./js/StateMachine.js"></script>
     <script type='module' src="./js/logic.js"></script>
     <script type='module' src="./js/app.js"></script>
+
+
+    <script type='module' src="./js/gameCharacter.js"></script>
     
 </body>
 </html>
